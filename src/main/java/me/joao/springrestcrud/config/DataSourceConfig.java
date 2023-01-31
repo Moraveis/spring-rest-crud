@@ -24,7 +24,7 @@ public class DataSourceConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("com.joao.springrestcrud.entities");
+        sessionFactory.setPackagesToScan("me.joao.springrestcrud.entities");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

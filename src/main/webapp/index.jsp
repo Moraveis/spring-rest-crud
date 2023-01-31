@@ -1,5 +1,7 @@
 <html>
     <body>
-        <h2>Spring MVC Demo - Home Page</h2>
+        <h2>Spring Rest Crud</h2>
+
+        <a href="${pageContext.request.contextPath}/api/customers">Get All Customers<a/>
     </body>
 </html>
