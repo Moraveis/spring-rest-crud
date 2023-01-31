@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'org.gretty' version '3.0.9'
 }
 
 group 'me.joao.springrestcrud'
@@ -10,8 +11,28 @@ repositories {
 }
 
 dependencies {
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.4.2'
+    implementation group: 'com.h2database', name: 'h2', version: '2.1.214'
+    implementation group: 'jakarta.annotation', name: 'jakarta.annotation-api', version: '1.3.5'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.6.10.Final'
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.2.0.Final'
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.24'
+    implementation group: 'org.springframework', name: 'spring-orm', version: '5.3.24'
+    implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.24'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.7.3'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+    //servletContainer = 'jetty9.4'
+    servletContainer = 'tomcat9'
 }
 
 test {
