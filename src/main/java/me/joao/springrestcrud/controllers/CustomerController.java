@@ -6,6 +6,7 @@ import me.joao.springrestcrud.services.CustomerService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +42,12 @@ public class CustomerController {
 
     @PostMapping("/customers")
     public Customer createCostumer(@RequestBody Customer customer) {
+        customerService.saveCustomer(customer);
+        return customer;
+    }
+
+    @PutMapping("/customers")
+    public Customer updateCustomer(@RequestBody Customer customer) {
         customerService.saveCustomer(customer);
         return customer;
     }
