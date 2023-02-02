@@ -37,7 +37,6 @@ public class DataSourceConfig {
                 .setType(EmbeddedDatabaseType.H2)
                 .setScriptEncoding("UTF-8")
                 .ignoreFailedDrops(true)
-                .addDefaultScripts()
                 .build();
     }
 
